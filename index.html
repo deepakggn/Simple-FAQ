@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html ng-app="plunker">
+
+<head>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.5/angular.js"></script>
+    <script src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.4.0.js"></script>
+    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet" />
+    <script src="script.js"></script>
+  </head>
+
+  <body ng-controller="AccordionDemoCtrl">
+    <h3> Simple FAQ Show and Hide using Angular</h3>
+    <p>Please click on any question to see the answer.</p>
+    <accordion close-others="false">
+      <br><button class="btn btn-default btn-sm" ng-click="obj.isAllOpen = !obj.isAllOpen">EXPAND / COLLAPSE</button>
+
+ {{obj.isAllOpen}}
+                    <accordion-group is-open="obj.isopen || obj.isAllOpen" ng-repeat="site in groups">
+        <accordion-heading ng-click="obj.isopen = !obj.isopen">
+               What are FAQ's? {{obj.isopen}}
+            </accordion-heading>
+
+
+<p>FAQ's are Frequently asked questions.
+<br>A list of questions and answers relating to a particular subject, especially one giving basic information for users of a website.
+<br><br>
+The Frequently Asked Questions (FAQ) section is a part of your website where you address common concerns, questions or objections that customers have.
+<br><br>
+It’s different from your About Page where you tell the broader story behind your brand. The FAQ section, instead, deals with the specifics. It's the go-to destination for finding answers to specific questions about your product or business operation.
+<br><br>
+Your FAQ page can also act as the first point of contact for customers looking for answers before they reach out to you directly with their questions.</p>
+        </accordion-group>
+    </accordion>
+  </body>
+
+</html>
